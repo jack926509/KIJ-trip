@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>北九州四天三夜完整旅遊規劃書</title>
+  <style>
+    :root{
+      --d1:#0f2d5c; --d2:#1a4a8a; --d3:#1a6ab0; --d4:#1e88e0;
+      --amber:#b45309; --amber-l:#fef3c7; --navy-l:#eef3fb;
+      --ink:#1e293b; --muted:#64748b; --line:#e2e8f0; --bg:#f4f7fb;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Noto Sans TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+
+    /* ── NAV ── */
+    .nav{position:sticky;top:0;z-index:99;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+    .nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;padding:10px 20px}
+    .nav-inner::-webkit-scrollbar{display:none}
+    .nav-brand{font-weight:900;font-size:15px;white-space:nowrap;margin-right:12px;flex-shrink:0}
+    .nav-brand em{color:var(--amber);font-style:normal}
+    .nav-link{display:inline-block;padding:6px 14px;border-radius:999px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap;transition:all .15s;flex-shrink:0;color:var(--muted)}
+    .nl1{color:var(--d1)}.nl1:hover{background:var(--navy-l)}
+    .nl2{color:var(--d2)}.nl2:hover{background:var(--navy-l)}
+    .nl3{color:var(--d3)}.nl3:hover{background:var(--navy-l)}
+    .nl4{color:var(--d4)}.nl4:hover{background:var(--navy-l)}
+    .nlp:hover{background:#f1f5f9;color:var(--ink)}
+
+    /* ── HERO ── */
+    .hero-wrap{background:linear-gradient(150deg,#071830 0%,#0f2d5c 55%,#0a1f40 100%);position:relative;overflow:hidden;padding-bottom:36px}
+    .hero-deco{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;
+      background:radial-gradient(circle at 15% 60%,rgba(30,136,224,.14) 0%,transparent 50%),
+                 radial-gradient(circle at 85% 30%,rgba(15,45,92,.35) 0%,transparent 50%)}
+    .hero-side{position:absolute;top:0;bottom:0;width:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;opacity:.18;pointer-events:none;font-size:64px;line-height:1}
+    .hero-side.left{left:0}
+    .hero-side.right{right:0}
+    .hero-inner{max-width:1200px;margin:auto;padding:44px 230px 0;position:relative;z-index:1;text-align:center}
+    .hero-h1{font-size:66px;font-weight:900;line-height:1.1;color:#fff;letter-spacing:6px;text-shadow:0 4px 20px rgba(0,0,0,.5)}
+    .hero-h1 .hot{color:#f59e0b}
+    .hero-sub{font-size:14px;color:rgba(255,255,255,.68);margin-top:10px;letter-spacing:3px}
+    .hero-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:26px}
+    .hc{background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 20px;text-align:left;backdrop-filter:blur(4px)}
+    .hc-ttl{font-size:13px;font-weight:800;letter-spacing:1px;color:#fbbf24;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+    .hc-row{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:rgba(255,255,255,.88);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .hc-row:last-child{border-bottom:0}
+    .hc-icon{font-size:15px;flex-shrink:0;margin-top:1px}
+    .hc-check{font-size:13.5px;color:rgba(255,255,255,.88);padding:5px 0;display:flex;gap:8px}
+    .hc-check::before{content:"✓";color:#f59e0b;font-weight:800;flex-shrink:0}
+
+    /* ── PAGE ── */
+    .page{max-width:1200px;margin:auto;padding:32px 20px 64px}
+
+    /* ── SEC TITLE ── */
+    .sec-wrap{text-align:center;margin-bottom:22px}
+    .sec-badge{display:inline-block;padding:10px 36px;border-radius:999px;background:linear-gradient(90deg,var(--d1),var(--amber));color:white;font-size:18px;font-weight:900;letter-spacing:2px}
+
+    /* ── OVERVIEW ── */
+    .ov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .ov-card{border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+    .ov-head{padding:11px 16px;color:white;font-size:14px;font-weight:800}
+    .ov-d1 .ov-head{background:linear-gradient(90deg,#0f2d5c,#1a4a8a)}
+    .ov-d2 .ov-head{background:linear-gradient(90deg,#1a4a8a,#1a6ab0)}
+    .ov-d3 .ov-head{background:linear-gradient(90deg,#1a6ab0,#1e88e0)}
+    .ov-d4 .ov-head{background:linear-gradient(90deg,#1e88e0,#3ba6f0)}
+    .ov-body{background:white;padding:14px 16px}
+    .ov-theme{font-size:11px;font-weight:700;color:var(--muted);margin-bottom:8px}
+    .ov-item{font-size:13px;padding:3px 0;display:flex;gap:6px;color:#334155}
+    .ov-d1 .ov-item::before{content:"✓";font-weight:800;flex-shrink:0;color:var(--d1)}
+    .ov-d2 .ov-item::before{content:"✓";font-weight:800;flex-shrink:0;color:var(--d2)}
+    .ov-d3 .ov-item::before{content:"✓";font-weight:800;flex-shrink:0;color:var(--d3)}
+    .ov-d4 .ov-item::before{content:"✓";font-weight:800;flex-shrink:0;color:var(--d4)}
+
+    /* ── DAY ROW ── */
+    .day-row{background:white;border-radius:24px;box-shadow:0 8px 30px rgba(0,0,0,.09);overflow:hidden;margin-bottom:24px}
+    .dr-head{padding:12px 24px;color:white;display:flex;align-items:center;gap:14px}
+    .dr-d1 .dr-head{background:linear-gradient(90deg,#0f2d5c,#1a4a8a)}
+    .dr-d2 .dr-head{background:linear-gradient(90deg,#1a4a8a,#1a6ab0)}
+    .dr-d3 .dr-head{background:linear-gradient(90deg,#1a6ab0,#1e88e0)}
+    .dr-d4 .dr-head{background:linear-gradient(90deg,#1e88e0,#3ba6f0)}
+    .dr-head h3{font-size:17px;font-weight:900;flex:1}
+    .dr-htag{font-size:12px;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:999px;white-space:nowrap}
+    .dr-body{display:grid;grid-template-columns:165px 1fr}
+
+    /* badge col — spans both timeline and must-eat rows */
+    .dr-bc{padding:20px 14px;display:flex;flex-direction:column;align-items:center;gap:10px;border-right:1px solid var(--line);grid-row:span 2}
+    .dr-badge{width:66px;height:66px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:white;font-weight:900;box-shadow:0 4px 14px rgba(0,0,0,.22)}
+    .dr-badge .dn{font-size:11px;letter-spacing:1px;opacity:.85}
+    .dr-badge .dnum{font-size:26px;line-height:1.1}
+    .dr-d1 .dr-badge{background:var(--d1)}
+    .dr-d2 .dr-badge{background:var(--d2)}
+    .dr-d3 .dr-badge{background:var(--d3)}
+    .dr-d4 .dr-badge{background:var(--d4)}
+    .dr-date{font-size:13px;font-weight:700;color:var(--muted);text-align:center}
+    .dr-stay{font-size:11px;padding:3px 10px;border-radius:999px;background:#f1f5f9;color:var(--muted);font-weight:700;text-align:center}
+
+    /* timeline col */
+    .dr-tl{padding:18px 22px}
+    .dr-route{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.4}
+    .tl-row{display:flex;gap:10px;padding:5px 0;font-size:13px;border-bottom:1px dashed #e8edf3}
+    .tl-row:last-child{border-bottom:0}
+    .tl-t{font-weight:800;color:var(--muted);min-width:44px;font-size:12.5px;flex-shrink:0;padding-top:1px}
+    .tl-c{color:#334155}
+
+    /* must-eat — horizontal strip below timeline */
+    .dr-must{padding:10px 22px 14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+    .must-ttl{display:flex;align-items:center;gap:5px;font-size:12.5px;font-weight:900;color:var(--amber);margin-bottom:0;flex-shrink:0}
+    .must-item{display:inline-block;font-size:12px;color:#334155;padding:4px 10px;background:var(--amber-l);border-radius:8px;border-bottom:none;line-height:1.5}
+    .must-item::before{content:"▸ ";color:var(--amber);font-weight:800}
+    .must-sub{display:block;font-size:10.5px;color:var(--muted);padding-left:13px}
+
+    /* tip */
+    .dr-tip{margin:0 24px 20px;border-left:5px solid var(--amber);background:var(--amber-l);padding:12px 16px;border-radius:12px;font-size:13.5px;line-height:1.65}
+    .dr-tip b{color:#92400e}
+
+    /* map */
+    .dr-map{margin:0 24px 20px;background:#f8fafc;border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+    .dr-map-ttl{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:8px}
+    .map-links{display:flex;gap:7px;flex-wrap:wrap}
+    .map-link{display:inline-flex;align-items:center;gap:3px;padding:5px 10px;border-radius:999px;background:white;border:1px solid #cbd5e1;color:#1d4ed8;text-decoration:none;font-weight:700;font-size:12px}
+    .map-link:hover{background:#eff6ff}
+    .map-link::before{content:"📍";font-size:10px}
+
+    /* ── BOTTOM SUMMARY ── */
+    .sum-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .sum-card{background:white;border-radius:20px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden}
+    .sum-head{padding:12px 18px;color:white;font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px}
+    .s-transport .sum-head{background:linear-gradient(90deg,var(--d1),var(--d2))}
+    .s-food .sum-head{background:linear-gradient(90deg,var(--amber),#d97706)}
+    .s-shop .sum-head{background:linear-gradient(90deg,var(--d3),var(--d4))}
+    .sum-body{padding:12px 16px}
+    .sum-row{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line);font-size:13px}
+    .sum-row:last-child{border-bottom:0}
+    .sl{min-width:52px;text-align:center;font-size:11px;font-weight:800;padding:2px 6px;border-radius:999px;color:white;flex-shrink:0}
+    .sl1{background:var(--d1)}.sl2{background:var(--d2)}.sl3{background:var(--d3)}.sl4{background:var(--d4)}.slg{background:var(--muted)}
+
+    /* print note */
+    .print-note{font-size:13px;color:var(--muted);text-align:center;margin-top:28px}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1060px){
+      .ov-grid{grid-template-columns:repeat(2,1fr)}
+      .dr-body{grid-template-columns:140px 1fr}
+      .sum-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:720px){
+      .hero-h1{font-size:40px;letter-spacing:2px}
+      .hero-inner{padding:32px 20px 0}
+      .hero-side{display:none}
+      .hero-cards{grid-template-columns:1fr}
+      .ov-grid{grid-template-columns:1fr 1fr}
+      .dr-body{grid-template-columns:110px 1fr}
+      .dr-htag{display:none}
+      .dr-bc{padding:16px 10px}
+      .dr-badge{width:54px;height:54px}
+      .dr-badge .dnum{font-size:22px}
+    }
+    @media print{
+      .nav{display:none}
+      body{background:white}
+      .page{max-width:none;padding:0}
+      .hero-wrap,.dr-d1 .dr-head,.dr-d2 .dr-head,.dr-d3 .dr-head,.dr-d4 .dr-head,
+      .ov-d1 .ov-head,.ov-d2 .ov-head,.ov-d3 .ov-head,.ov-d4 .ov-head,
+      .sum-head{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .day-row,.sum-card,.ov-card{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">🗾 北九州 <em>四天三夜</em></div>
+    <a class="nav-link nl1" href="#day1">Day 1 柳川</a>
+    <a class="nav-link nl2" href="#day2">Day 2 夜景</a>
+    <a class="nav-link nl3" href="#day3">Day 3 港町</a>
+    <a class="nav-link nl4" href="#day4">Day 4 小倉</a>
+    <a class="nav-link nlp" href="#transport">交通</a>
+    <a class="nav-link nlp" href="#food">美食</a>
+    <a class="nav-link nlp" href="#shopping">逛街</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<header class="hero-wrap">
+  <div class="hero-deco"></div>
+  <div class="hero-side left">⛩️<br>🌸<br>🎋</div>
+  <div class="hero-side right">🏯<br>⛵<br>🌃</div>
+  <div class="hero-inner">
+    <div class="hero-h1">北九州<span class="hot">四天</span>三夜</div>
+    <div class="hero-sub">水鄉柳川・太宰府・博多天神・小倉・皿倉山夜景・門司港唐戶市場</div>
+    <div class="hero-cards">
+      <div class="hc">
+        <div class="hc-ttl">✈ 航班資訊</div>
+        <div class="hc-row"><span class="hc-icon">🛫</span><span>去程　9/3（四）7G800　桃園 03:00 → 北九州 06:20</span></div>
+        <div class="hc-row"><span class="hc-icon">🛬</span><span>回程　9/6（日）7G801　北九州 23:40 → 桃園 01:10</span></div>
+        <div class="hc-row"><span class="hc-icon">🏨</span><span>住宿　9/3 福岡 1 晚；9/4–9/5 小倉 2 晚</span></div>
+      </div>
+      <div class="hc">
+        <div class="hc-ttl">☀ 行程重點</div>
+        <div class="hc-check">歷史寺社 × 水鄉遊船 × 海鮮市場</div>
+        <div class="hc-check">逛街美食 × 港町復古 × 百萬夜景</div>
+        <div class="hc-check">在地美食一次吃好吃滿！</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ══ OVERVIEW ══ -->
+  <section style="margin-bottom:28px">
+    <div class="sec-wrap"><span class="sec-badge">四天行程概覽</span></div>
+    <div class="ov-grid">
+      <div class="ov-card ov-d1">
+        <div class="ov-head">Day 1 ｜ 9/3（四）</div>
+        <div class="ov-body">
+          <div class="ov-theme">主題：歷史寺社＋水鄉＋鰻魚飯</div>
+          <div class="ov-item">太宰府天滿宮・梅枝餅</div>
+          <div class="ov-item">柳川川下り・水鄉散步</div>
+          <div class="ov-item">柳川鰻魚蒸籠飯</div>
+          <div class="ov-item">福岡住宿（博多站周邊）</div>
+        </div>
+      </div>
+      <div class="ov-card ov-d2">
+        <div class="ov-head">Day 2 ｜ 9/4（五）</div>
+        <div class="ov-body">
+          <div class="ov-theme">主題：逛街美食＋北九州夜景</div>
+          <div class="ov-item">博多 AMU Plaza・KITTE 等</div>
+          <div class="ov-item">天神地下街・PARCO</div>
+          <div class="ov-item">博多拉麵・一口餃子等</div>
+          <div class="ov-item">皿倉山夜景・小倉住宿</div>
+        </div>
+      </div>
+      <div class="ov-card ov-d3">
+        <div class="ov-head">Day 3 ｜ 9/5（六）</div>
+        <div class="ov-body">
+          <div class="ov-theme">主題：海鮮市場＋港町復古＋燒咖哩</div>
+          <div class="ov-item">唐戶市場（壽司、河豚等）</div>
+          <div class="ov-item">赤間神宮・關門海峽</div>
+          <div class="ov-item">門司港復古建築散步</div>
+          <div class="ov-item">門司港燒咖哩・小倉住宿</div>
+        </div>
+      </div>
+      <div class="ov-card ov-d4">
+        <div class="ov-head">Day 4 ｜ 9/6（日）</div>
+        <div class="ov-body">
+          <div class="ov-theme">主題：小倉市區半日＋返程</div>
+          <div class="ov-item">小倉城・庭園・八坂神社</div>
+          <div class="ov-item">旦過市場・魚町銀天街</div>
+          <div class="ov-item">小倉燒烏龍・在地小吃</div>
+          <div class="ov-item">北九州機場 23:40 起飛</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DAY 1 ══ -->
+  <section id="day1" class="day-row dr-d1">
+    <div class="dr-head">
+      <h3>北九州機場 → 太宰府 → 柳川 → 福岡住宿</h3>
+      <span class="dr-htag">主題：歷史寺社＋水鄉＋鰻魚飯</span>
+    </div>
+    <div class="dr-body">
+      <div class="dr-bc">
+        <div class="dr-badge"><div class="dn">Day</div><div class="dnum">1</div></div>
+        <div class="dr-date">9/3（四）</div>
+        <div class="dr-stay">🏨 住宿：福岡</div>
+      </div>
+      <div class="dr-tl">
+        <div class="dr-route">北九州機場 → 小倉 → 博多 → 太宰府 → 柳川 → 福岡</div>
+        <div class="tl-row"><span class="tl-t">06:20</span><span class="tl-c">抵達北九州機場，入境、領行李、整理票券</span></div>
+        <div class="tl-row"><span class="tl-t">08:00</span><span class="tl-c">機場巴士 → 小倉站</span></div>
+        <div class="tl-row"><span class="tl-t">09:00</span><span class="tl-c">小倉 → 博多方向，福岡寄放行李</span></div>
+        <div class="tl-row"><span class="tl-t">10:30</span><span class="tl-c">太宰府天滿宮・參道・星巴克表參道店</span></div>
+        <div class="tl-row"><span class="tl-t">12:30</span><span class="tl-c">太宰府小吃・梅枝餅；留胃口給鰻魚飯</span></div>
+        <div class="tl-row"><span class="tl-t">13:30</span><span class="tl-c">太宰府 → 柳川（西鐵，約 40–50 分）</span></div>
+        <div class="tl-row"><span class="tl-t">15:00</span><span class="tl-c">柳川川下り・水鄉散步・御花周邊</span></div>
+        <div class="tl-row"><span class="tl-t">17:00</span><span class="tl-c">柳川鰻魚蒸籠飯晚餐（沖端碼頭旁）</span></div>
+        <div class="tl-row"><span class="tl-t">18:30</span><span class="tl-c">柳川 → 福岡住宿；體力夠去中洲屋台</span></div>
+      </div>
+      <div class="dr-must">
+        <div class="must-ttl">🍴 必吃</div>
+        <div class="must-item">梅枝餅<div class="must-sub">太宰府名物，現烤必買</div></div>
+        <div class="must-item">柳川鰻魚蒸籠飯<div class="must-sub">若松屋・元祖本吉屋</div></div>
+        <div class="must-item">中洲屋台<div class="must-sub">晚上體力夠可加</div></div>
+      </div>
+    </div>
+    <div class="dr-map">
+      <div class="dr-map-ttl">📍 Google Maps 快速導航</div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kitakyushu+Airport" target="_blank" rel="noopener">北九州機場</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Dazaifu+Tenmangu" target="_blank" rel="noopener">太宰府天滿宮</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yanagawa+River+Cruise" target="_blank" rel="noopener">柳川川下り</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nishitetsu+Yanagawa+Station" target="_blank" rel="noopener">西鐵柳川站</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Nakasu+Yatai+Fukuoka" target="_blank" rel="noopener">中洲屋台</a>
+      </div>
+    </div>
+    <div class="dr-tip">
+      <b>✦ 旅遊大師貼士</b>　沖端碼頭下船後，若松屋與本吉屋沖端店就在旁邊步行即達。建議 <b>16:00–17:00 前後到</b>，避開 12–13 點遊船大批下船的人潮。9/3 週四兩家均正常營業，不必擔心公休日。
+    </div>
+  </section>
+
+  <!-- ══ DAY 2 ══ -->
+  <section id="day2" class="day-row dr-d2">
+    <div class="dr-head">
+      <h3>博多／天神 → 小倉 → 皿倉山夜景 → 小倉住宿</h3>
+      <span class="dr-htag">主題：逛街美食＋北九州夜景</span>
+    </div>
+    <div class="dr-body">
+      <div class="dr-bc">
+        <div class="dr-badge"><div class="dn">Day</div><div class="dnum">2</div></div>
+        <div class="dr-date">9/4（五）</div>
+        <div class="dr-stay">🏨 住宿：小倉</div>
+      </div>
+      <div class="dr-tl">
+        <div class="dr-route">博多站 → 天神 → 小倉 check-in → 皿倉山</div>
+        <div class="tl-row"><span class="tl-t">09:30</span><span class="tl-c">飯店早餐、退房；行李寄放</span></div>
+        <div class="tl-row"><span class="tl-t">10:30</span><span class="tl-c">博多站：AMU Plaza、博多阪急、KITTE 博多</span></div>
+        <div class="tl-row"><span class="tl-t">12:00</span><span class="tl-c">福岡午餐：拉麵・一口餃子・牛腸鍋・水炊き</span></div>
+        <div class="tl-row"><span class="tl-t">13:30</span><span class="tl-c">天神地下街、PARCO、岩田屋、大名選物、藥院咖啡</span></div>
+        <div class="tl-row"><span class="tl-t">15:30</span><span class="tl-c">福岡 → 小倉（新幹線或 JR 特急）</span></div>
+        <div class="tl-row"><span class="tl-t">16:30</span><span class="tl-c">小倉飯店 check-in、放行李</span></div>
+        <div class="tl-row"><span class="tl-t">17:30</span><span class="tl-c">JR 八幡站 → 免費接駁巴士 → 皿倉山山麓站</span></div>
+        <div class="tl-row"><span class="tl-t">18:30</span><span class="tl-c">纜車 6 分＋slope car 3 分；夕陽→夜景</span></div>
+        <div class="tl-row"><span class="tl-t">20:30</span><span class="tl-c">下山，魚町銀天街或小倉站周邊晚餐</span></div>
+      </div>
+      <div class="dr-must">
+        <div class="must-ttl">🍴 必吃</div>
+        <div class="must-item">博多豚骨拉麵</div>
+        <div class="must-item">一口餃子<div class="must-sub">博多名物，皮薄餡多</div></div>
+        <div class="must-item">牛腸鍋／居酒屋料理</div>
+        <div class="must-item">明太子<div class="must-sub">博多站伴手禮</div></div>
+      </div>
+    </div>
+    <div class="dr-map">
+      <div class="dr-map-ttl">📍 Google Maps 快速導航</div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hakata+Station+AMU+Plaza" target="_blank" rel="noopener">博多站商圈</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tenjin+Underground+Mall" target="_blank" rel="noopener">天神地下街</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Sarakurayama+Cable+Car" target="_blank" rel="noopener">皿倉山纜車</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kokura+Station" target="_blank" rel="noopener">小倉站</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Uomachi+Gintengai+Kokura" target="_blank" rel="noopener">魚町銀天街</a>
+      </div>
+    </div>
+    <div class="dr-tip">
+      <b>✦ 旅遊大師貼士</b>　皿倉山纜車 <b>4–10 月至 22:00（末班上行 21:20）</b>，每週二公休（假日除外）。9/4 週五完全正常，不須備案！JR 八幡站有<b>免費接駁巴士</b>每隔 10 分鐘一班。建議 <b>18:30 抵達山頂</b>，先看夕陽再轉夜景，兩種風景一次收錄。
+    </div>
+  </section>
+
+  <!-- ══ DAY 3 ══ -->
+  <section id="day3" class="day-row dr-d3">
+    <div class="dr-head">
+      <h3>小倉 → 門司港 → 唐戶市場 → 門司港復古 → 小倉住宿</h3>
+      <span class="dr-htag">主題：海鮮市場＋港町復古＋燒咖哩</span>
+    </div>
+    <div class="dr-body">
+      <div class="dr-bc">
+        <div class="dr-badge"><div class="dn">Day</div><div class="dnum">3</div></div>
+        <div class="dr-date">9/5（六）</div>
+        <div class="dr-stay">🏨 住宿：小倉</div>
+      </div>
+      <div class="dr-tl">
+        <div class="dr-route">小倉 → 門司港 → 關門汽船 → 唐戶 → 門司港復古</div>
+        <div class="tl-row"><span class="tl-t">08:30</span><span class="tl-c">小倉出發，JR 前往門司港（約 15 分）</span></div>
+        <div class="tl-row"><span class="tl-t">09:30</span><span class="tl-c">門司港碼頭 → 關門汽船 → 唐戶（約 5 分）</span></div>
+        <div class="tl-row"><span class="tl-t">10:00</span><span class="tl-c">唐戶市場：壽司・河豚・海鮮；先繞一圈再購</span></div>
+        <div class="tl-row"><span class="tl-t">12:00</span><span class="tl-c">赤間神宮、海響館或關門海峽海邊散步</span></div>
+        <div class="tl-row"><span class="tl-t">13:30</span><span class="tl-c">唐戶 → 門司港（關門汽船）</span></div>
+        <div class="tl-row"><span class="tl-t">14:00</span><span class="tl-c">門司港復古：舊大阪商船・舊稅關・藍翼門司・海峽 Plaza</span></div>
+        <div class="tl-row"><span class="tl-t">16:00</span><span class="tl-c">門司港展望室 或 九州鐵道紀念館</span></div>
+        <div class="tl-row"><span class="tl-t">17:30</span><span class="tl-c">門司港燒咖哩晚餐 → JR 回小倉</span></div>
+      </div>
+      <div class="dr-must">
+        <div class="must-ttl">🍴 必吃</div>
+        <div class="must-item">唐戶市場壽司<div class="must-sub">週六特集最熱鬧</div></div>
+        <div class="must-item">河豚・炸河豚</div>
+        <div class="must-item">門司港燒咖哩<div class="must-sub">Princess Phi Phi 推薦</div></div>
+      </div>
+    </div>
+    <div class="dr-map">
+      <div class="dr-map-ttl">📍 Google Maps 快速導航</div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Mojiko+Station" target="_blank" rel="noopener">門司港站</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Karato+Market" target="_blank" rel="noopener">唐戶市場</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Akama+Shrine" target="_blank" rel="noopener">赤間神宮</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kaikyo+Museum+Shimonoseki" target="_blank" rel="noopener">海響館</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Blue+Wing+Moji" target="_blank" rel="noopener">藍翼門司</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kyushu+Railway+History+Museum" target="_blank" rel="noopener">九州鐵道紀念館</a>
+      </div>
+    </div>
+    <div class="dr-tip">
+      <b>✦ 旅遊大師貼士</b>　Princess Phi Phi 獲 TBS「全國絕品在地咖哩 10 選」，週六人潮最旺。建議 <b>17:30 後前往</b>，等候大幅縮短；或事先查詢線上預約 17:00–19:00 時段更穩妥。明太子燒咖哩加炸河豚（+¥600）是門司港最完整的在地體驗組合。
+    </div>
+  </section>
+
+  <!-- ══ DAY 4 ══ -->
+  <section id="day4" class="day-row dr-d4">
+    <div class="dr-head">
+      <h3>小倉城 → 旦過市場 → 小倉市區 → 北九州機場</h3>
+      <span class="dr-htag">主題：小倉市區半日＋伴手禮＋返程　✈ 23:40 起飛</span>
+    </div>
+    <div class="dr-body">
+      <div class="dr-bc">
+        <div class="dr-badge"><div class="dn">Day</div><div class="dnum">4</div></div>
+        <div class="dr-date">9/6（日）</div>
+        <div class="dr-stay">✈ 返程日</div>
+      </div>
+      <div class="dr-tl">
+        <div class="dr-route">小倉城 → Riverwalk → 旦過市場 → 魚町銀天街 → 機場</div>
+        <div class="tl-row"><span class="tl-t">09:30</span><span class="tl-c">飯店早餐、退房；行李寄放</span></div>
+        <div class="tl-row"><span class="tl-t">10:30</span><span class="tl-c">小倉城・小倉城庭園・八坂神社</span></div>
+        <div class="tl-row"><span class="tl-t">12:00</span><span class="tl-c">Riverwalk 北九州午餐或咖啡</span></div>
+        <div class="tl-row"><span class="tl-t">13:30</span><span class="tl-c">旦過市場：市場小吃・海鮮熟食</span></div>
+        <div class="tl-row"><span class="tl-t">15:00</span><span class="tl-c">魚町銀天街・小倉站・伴手禮採買</span></div>
+        <div class="tl-row"><span class="tl-t">17:00</span><span class="tl-c">晚餐：小倉燒烏龍或居酒屋</span></div>
+        <div class="tl-row"><span class="tl-t">18:30</span><span class="tl-c">回飯店拿行李、整理出發</span></div>
+        <div class="tl-row"><span class="tl-t">19:30</span><span class="tl-c">小倉站 → 北九州機場（機場巴士 40 分）</span></div>
+        <div class="tl-row"><span class="tl-t">20:30</span><span class="tl-c">報到・出境・候機</span></div>
+        <div class="tl-row"><span class="tl-t">23:40</span><span class="tl-c">🛫 7G801 起飛，返回桃園</span></div>
+      </div>
+      <div class="dr-must">
+        <div class="must-ttl">🍴 必吃</div>
+        <div class="must-item">小倉燒烏龍<div class="must-sub">最在地特色，不油不撐</div></div>
+        <div class="must-item">旦過市場小吃</div>
+        <div class="must-item">小倉站便當<div class="must-sub">月台限定，帶上飛機</div></div>
+        <div class="must-item">北九州伴手禮<div class="must-sub">燒咖哩調理包・明太子</div></div>
+      </div>
+    </div>
+    <div class="dr-map">
+      <div class="dr-map-ttl">📍 Google Maps 快速導航</div>
+      <div class="map-links">
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kokura+Castle" target="_blank" rel="noopener">小倉城</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Tanga+Market" target="_blank" rel="noopener">旦過市場</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Riverwalk+Kitakyushu" target="_blank" rel="noopener">Riverwalk</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Uomachi+Gintengai+Kokura" target="_blank" rel="noopener">魚町銀天街</a>
+        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Kitakyushu+Airport" target="_blank" rel="noopener">北九州機場</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BOTTOM SUMMARY ══ -->
+  <div class="sum-grid">
+    <div id="transport" class="sum-card s-transport">
+      <div class="sum-head">🚅 交通總整理</div>
+      <div class="sum-body">
+        <div class="sum-row"><span class="sl sl1">機場</span><span>機場 → 小倉：機場巴士直達</span></div>
+        <div class="sum-row"><span class="sl slg">小倉↔博</span><span>新幹線最快；JR 特急較省</span></div>
+        <div class="sum-row"><span class="sl sl1">福→太宰</span><span>西鐵天神大牟田線</span></div>
+        <div class="sum-row"><span class="sl sl1">太宰→柳</span><span>西鐵同系統，直接轉乘</span></div>
+        <div class="sum-row"><span class="sl sl2">→皿倉山</span><span>JR 八幡站＋免費接駁巴士＋纜車</span></div>
+        <div class="sum-row"><span class="sl sl3">→門司港</span><span>JR 鹿兒島本線（小倉→門司港 15 分）</span></div>
+        <div class="sum-row"><span class="sl sl3">門↔唐戶</span><span>關門汽船（5 分，觀光感強）</span></div>
+        <div class="sum-row"><span class="sl sl4">→機場</span><span>小倉站 → 北九州機場（巴士 40 分）</span></div>
+      </div>
+    </div>
+    <div id="food" class="sum-card s-food">
+      <div class="sum-head">🍽️ 美食總整理</div>
+      <div class="sum-body">
+        <div class="sum-row"><span class="sl slg">太宰府</span><span>梅枝餅、抹茶甜點</span></div>
+        <div class="sum-row"><span class="sl sl1">柳川</span><span>鰻魚蒸籠飯（若松屋・元祖本吉屋）</span></div>
+        <div class="sum-row"><span class="sl sl2">博多/天神</span><span>豚骨拉麵・明太子・牛腸鍋・水炊き</span></div>
+        <div class="sum-row"><span class="sl sl2">博多</span><span>一口餃子（博多名物必試）</span></div>
+        <div class="sum-row"><span class="sl sl3">門司港</span><span>燒咖哩（Princess Phi Phi 推薦）・香蕉甜點</span></div>
+        <div class="sum-row"><span class="sl sl3">唐戶市場</span><span>壽司・海鮮・河豚・炸物</span></div>
+        <div class="sum-row"><span class="sl sl4">小倉</span><span>燒烏龍・旦過市場小吃・小倉站便當</span></div>
+      </div>
+    </div>
+    <div id="shopping" class="sum-card s-shop">
+      <div class="sum-head">🛍 逛街總整理</div>
+      <div class="sum-body">
+        <div class="sum-row"><span class="sl sl1">博多</span><span>AMU Plaza・博多阪急・KITTE・伴手禮</span></div>
+        <div class="sum-row"><span class="sl sl2">天神</span><span>天神地下街・PARCO・岩田屋・Solaria</span></div>
+        <div class="sum-row"><span class="sl slg">大名/藥院</span><span>選物店・咖啡廳・服飾品牌</span></div>
+        <div class="sum-row"><span class="sl slg">太宰府</span><span>參道伴手禮・和菓子・星巴克限定</span></div>
+        <div class="sum-row"><span class="sl sl4">小倉</span><span>魚町銀天街・Riverwalk・小倉站商場</span></div>
+        <div class="sum-row"><span class="sl sl3">門司港</span><span>海峽 Plaza・復古建築小店・香蕉主題商品</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p class="print-note">建議列印或另存 PDF：瀏覽器開啟後按 ⌘/Ctrl + P，可作為旅行手冊使用。</p>
+</div>
+</body>
+</html>
